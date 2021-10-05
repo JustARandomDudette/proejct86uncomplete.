@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Birthday wishes</title>
+
+</head>
+<body class="body_background">
+=
+	<div style="background-image: url('BirthdayImage\ 4.39.25\ PM.jpg');">
+		<center>
+			<br><br>
+			<!--- Create canvas --->
+			
+<canvas id="myCanvas" width="800" height="700" style= "border-style:ridge;background-color:white;">
+</canvas>
+			<br>
+			<!--- Create Bootstrap button --->
+			<button id = "myButton" onclick = "playSound()" type = "button" class = "btn btn-warning"></button>
+		</center>
+		<audio id="myAudio" src="bdayaudio.mp3"></audio>
+	</div>
+	<script>
+		var canvas = new fabric.Canvas('myCanvas');
+ var x= document.getElementById("myAudio");
+var player_object = "";
+player_y = 10;
+player_x = 10;
+
+
+function new_image()
+{
+fabric.Image.fromURL("balloons.png", function(Img) {
+player_object = Img;
+player_object.scaleToWidth(150);
+player_object.scaleToHeight(140);
+canvas.add(player_object);
+});	
+}
+new_image();
+
+function playSound(){
+	x.play();
+}
+
+	</script>
+</body>
+</html>
